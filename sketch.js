@@ -12,7 +12,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(1400, 800);
+  createCanvas(1200, 800);
   engine = Engine.create();
   world = engine.world;
 
@@ -22,22 +22,22 @@ function setup() {
   rope = new Rope(hero.body, { x: 500, y: 50 });
   monster = new Monster(1100,550,300);
 
-  box1 = new Box(600, 200, 70, 70);
-  box2 = new Box(900, 200, 70, 70);
-  box3 = new Box(900, 200, 70, 70);
-  box4 = new Box(900, 200, 70, 70);
-  box5 = new Box(900, 200, 70, 70);
-  box6 = new Box(900, 200, 70, 70);
-  box7 = new Box(800, 200, 70, 70);
-  box8 = new Box(800, 200, 70, 70);
+  box1 = new Box(600, 100, 70, 70);
+  box2 = new Box(900, 100, 70, 70);
+  box3 = new Box(900, 100, 70, 70);
+  box4 = new Box(900, 100, 70, 70);
+  box5 = new Box(900, 100, 70, 70);
+  box6 = new Box(900, 100, 70, 70);
+  box7 = new Box(800, 100, 70, 70);
+  box8 = new Box(800, 100, 70, 70);
   box9 = new Box(800, 100, 70, 70);
-  box10 = new Box(800, 200, 70, 70);
-  box11 = new Box(800, 200, 70, 70);
-  box12 = new Box(800, 200, 70, 70);
+  box10 = new Box(800, 100, 70, 70);
+  box11 = new Box(800, 100, 70, 70);
+  box12 = new Box(800, 100, 70, 70);
   box13 = new Box(800, 100, 70, 70);
-  box14 = new Box(800, 200, 70, 70);
-  box15 = new Box(700, 200, 70, 70);
-  box16 = new Box(700, 200, 70, 70);
+  box14 = new Box(800, 100, 70, 70);
+  box15 = new Box(700, 100, 70, 70);
+  box16 = new Box(700, 100, 70, 70);
   box17 = new Box(700, 100, 70, 70);
   box18 = new Box(700, 100, 70, 70);
   box19 = new Box(700, 100, 70, 70);
@@ -53,6 +53,15 @@ function setup() {
 
 function draw() {
   background(bg);
+  push();
+  textSize(15);
+  strokeWeight(2);
+     stroke(255);
+     fill("black");
+  text("Quick! The superhero needs your help to defeat the monster!", 40, 100)
+  text("Drag and drop her to their location!", 40, 120)
+  text("Use the cargo boxes ahead to increase the damage and throw the monstor off", 40, 140)
+  pop();
   Engine.update(engine);
   ground.display();
   box1.display();
@@ -89,8 +98,5 @@ function draw() {
 }
 
 function mouseDragged() {
-  //set the position of hero when mouse is dragged
-  Matter.Body.setPosition(hero.body, { x: 600, y: 765});
+  Matter.Body.setPosition(hero.body, { x: mouseX, y: mouseY });
 }
-
-
