@@ -60,7 +60,7 @@ function draw() {
      fill("black");
   text("Quick! The superhero needs your help to defeat the monster!", 40, 100)
   text("Drag and drop her to its location!", 40, 120)
-  text("Use the cargo boxes ahead to increase the damage and throw the monstor off", 40, 140)
+  text("Use the cargo boxes ahead to increase the damage and throw the monstr off", 40, 140)
   pop();
   Engine.update(engine);
   ground.display();
